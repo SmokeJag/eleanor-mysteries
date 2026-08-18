@@ -165,7 +165,7 @@ def parse_script(path: Path):
 
 def render(events):
     out = []
-    out.append("# ELEANOR: The Scales of Ma'at")
+    out.append("# ELEANOR: The Mansion Mysteries")
     out.append("")
     out.append("*A novel-style reading of the game script.*")
     out.append("")
