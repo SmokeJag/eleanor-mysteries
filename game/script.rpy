@@ -16,7 +16,7 @@ define g = Character("Giles", color="#888888")          # the Ashworth butler
 # -------------------------------------------------------------------------------------------
 # IMAGE ALIASES — Backgrounds (reused from the trilogy)
 # -------------------------------------------------------------------------------------------
-image bg mansion_ext = "images/backgrounds/bg_mansion_ext.webp"
+image bg mansion_ext = "images/backgrounds/bg_mansion_restored.webp"
 image bg hallway = "images/backgrounds/bg_hallway.webp"
 image bg library = "images/backgrounds/bg_library.webp"
 
