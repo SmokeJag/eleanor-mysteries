@@ -545,6 +545,8 @@ style page_label_text:
 style page_button:
     properties gui.button_properties("page_button")
     padding (15, 6)
+    background Frame(Solid("#2a2a4a88"), 4, 4)
+    hover_background Frame(Solid("#4a3a6aCC"), 4, 4)
 
 style page_button_text:
     properties gui.text_properties("page_button")
