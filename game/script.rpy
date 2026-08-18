@@ -9,7 +9,9 @@
 define e = Character("Eleanor", color="#c8a2c8")
 define n = Character("Neith", color="#e8d8e8")
 define c = Character("Mr. Ashworth", color="#8fb3a8")   # the client
-define s = Character("The Curator", color="#d4a373")   # museum curator
+define w = Character("Mrs. Bell", color="#d4a373")      # the banker's widow
+define cu = Character("The Curator", color="#b08050")   # antiquities dealer who sourced the mirror
+define g = Character("Giles", color="#888888")          # the Ashworth butler
 
 # -------------------------------------------------------------------------------------------
 # IMAGE ALIASES — Backgrounds (reused from the trilogy)
@@ -24,6 +26,7 @@ image bg library = "images/backgrounds/bg_library.webp"
 image eleanor_neutral = Solid("#c8a2c8")
 image eleanor_determined = Solid("#c8a2c8")
 image neith_neutral = Solid("#e8d8e8")
+image curator = Solid("#b08050")
 
 # -------------------------------------------------------------------------------------------
 # CUSTOM TRANSITIONS
@@ -33,13 +36,16 @@ define slow_fade = Fade(1.0, 0.5, 1.0)
 define flash = Fade(0.1, 0.0, 0.5, color="#ffffff")
 
 # -------------------------------------------------------------------------------------------
-# EPISODE ONE — THE HAUNTED ARTIFACT
+# EPISODE ONE — UPON REFLECTION
 # -------------------------------------------------------------------------------------------
 label start:
     # Game State
     $ clue_letter = False
     $ clue_ledger = False
-    $ solved = False
+    $ clue_origin = False
+    $ mirror_read = False
+    $ tempted = False
+    $ ashworth_guilty = True
 
     scene bg mansion_ext
     with slow_fade
@@ -82,7 +88,7 @@ label start:
     scene black
     with slow_fade
 
-    centered "{size=+6}{color=#d4a373}EPISODE ONE — THE HAUNTED ARTIFACT{/color}{/size}"
+    centered "{size=+6}{color=#d4a373}EPISODE ONE — UPON REFLECTION{/color}{/size}"
 
     pause 1.5
 
@@ -145,7 +151,7 @@ label start:
 
     pause 1.5
 
-    # --- The investigation ---
+    # --- The investigation: where to begin ---
     scene bg library
     with slow_fade
 
@@ -155,7 +161,7 @@ label start:
     show neith_neutral at right
     with dissolve
 
-    e "The first was a banker. The second, a baron. The third, a merchant. Different lives, different deaths. But all of them—"
+    e "The first was a banker, James Bell. The second, a baron, Lord Whitmore. The third, a merchant, Silas Grant. Different lives, different deaths. But all of them—"
 
     "I tapped the page."
 
@@ -179,21 +185,126 @@ label start:
 
     "The realisation settled over us like a cold shadow. This was not a cursed object that had escaped. This was a *weapon*, and someone was using it."
 
-    e "We need to see the mirror. And we need to find out who sold it to Ashworth."
+    e "Two ways to crack this open. We can talk to the families of the dead—find out what they had in common. Or we can trace the mirror itself—find out who sold it to Ashworth."
 
-    n "The records will tell us. But first—"
+    n "The records say Ashworth bought it from a dealer in the East End. A man they call the Curator."
 
-    "She smiled, a little grim."
+    e "Then we have a choice. Where do we start?"
 
-    n "—we need to be careful. A mirror that shows the guilty their sins is not something to look into lightly."
+    menu:
+        "Visit the banker's widow — Mrs. Bell":
+            jump investigate_family
 
-    e "Then we won't look into it. We'll look *at* it."
+        "Track down the Curator — the mirror's dealer":
+            jump investigate_curator
 
-    "She raised an eyebrow."
+    return
 
-    n "That is a very fine distinction, Eleanor."
+# --- Branch A: the victim's family ---
+label investigate_family:
+    scene bg hallway
+    with slow_fade
 
-    e "I'm a detective. Fine distinctions are my job."
+    "Mrs. Bell lived in a modest house in a quiet square—a widow's home, kept neat and spare, with the photographs of a dead man still on the mantel."
+
+    show eleanor_neutral at left
+    show neith_neutral at right
+    with dissolve
+
+    w "You say you're investigating my husband's death. The police called it a seizure. They said he died staring at his own reflection, like a man who had seen a ghost."
+
+    e "We believe there was more to it, Mrs. Bell. Your husband bought a mirror shortly before he died. Do you remember it?"
+
+    "Her face went pale."
+
+    w "The mirror. Yes. He brought it home and he was *different* after that. Secretive. Guilty. He spent his last week in his study, staring at that terrible thing."
+
+    e "Guilty about what?"
+
+    "She hesitated, then went to a drawer and drew out a letter, yellowed with age."
+
+    w "James was not a good man, ladies. I loved him, but I knew what he was. He was a banker who had ruined families—who had taken their homes and their savings and called it business."
+
+    w "This letter came from a man named Ashworth, weeks before James died. He accused James of destroying his father. Of driving him to the workhouse, and then to his grave."
+
+    e "Ashworth wrote to your husband?"
+
+    w "Yes. James laughed at it. Said Ashworth was a fool who couldn't prove a thing. But I saw him look at the mirror after that. As if it knew."
+
+    "I took the letter. It was the same griffin seal as the one on our doorstep."
+
+    $ clue_letter = True
+
+    "I tucked Ashworth's letter carefully into my coat. It might matter later."
+
+    e "Mrs. Bell, you may have just saved lives. Thank you."
+
+    w "Just... end it. Whatever it is. My husband was a sinner, but he was my husband. No one should die like that."
+
+    scene black
+    with slow_fade
+
+    centered "{size=+6}{color=#d4a373}THE TRACE{/color}{/size}"
+
+    pause 1.5
+
+    jump investigate_curator
+
+# --- Branch B: the Curator ---
+label investigate_curator:
+    scene bg library
+    with slow_fade
+
+    "The Curator's shop was a cramped, dusty den of curiosities in a forgotten corner of the East End—a place that smelled of old paper, beeswax, and secrets."
+
+    show eleanor_neutral at left
+    show neith_neutral at right
+    with dissolve
+
+    "The man himself was thin and sharp, with the quick, watchful eyes of a dealer who had sold many things and asked no questions."
+
+    show curator at center
+    with dissolve
+
+    cu "Ladies. You have the look of people who want something they cannot name."
+
+    e "We want to know about a mirror. A silver hand-mirror, sold to a Mr. Ashworth. The one that kills."
+
+    "The Curator's smile did not waver, but something in his eyes went cold."
+
+    cu "I sell many mirrors, miss. I do not keep a ledger of their sins."
+
+    n "But you remember this one. I can see it in your face. You know what it does."
+
+    "He was silent for a long moment. Then he reached beneath the counter and drew out a small, worn book."
+
+    cu "I keep records. It is good for business, and better for protection. This mirror—"
+
+    "He opened the ledger."
+
+    cu "—was not mine to sell. It was placed in my hands by a man in a dark coat, who paid me well and told me to pass it on to a specific buyer."
+
+    e "Ashworth?"
+
+    cu "No. He told me to sell it to *whoever* was buying—and that the man who sold it would come for it again. It has been sold three times in six months. Each time, the buyer died."
+
+    n "And each time, the man in the dark coat came back."
+
+    cu "You are quick, priestess. Yes. He collects them, you see. The returned artifacts. The ones that feed."
+
+    "I felt a chill. This was bigger than Ashworth."
+
+    e "Who is he? The man in the dark coat?"
+
+    cu "I do not know his name. But I can tell you this—he is not the first to have sold such things. And he will not be the last."
+
+    "He closed the ledger and slid it toward us."
+
+    cu "Take it. I have carried this secret long enough. Perhaps you can do what I could not."
+
+    $ clue_origin = True
+
+    "I took the ledger, heavy with a hundred secrets."
 
     scene black
     with slow_fade
@@ -202,7 +313,10 @@ label start:
 
     pause 1.5
 
-    # --- The vault ---
+    jump investigate_vault
+
+# --- The vault ---
+label investigate_vault:
     scene bg library
     with slow_fade
 
@@ -252,6 +366,8 @@ label start:
 
     "Ashworth."
 
+    $ mirror_read = True
+
     "The light died. Neith staggered back, and I caught her."
 
     e "Neith!"
@@ -270,14 +386,82 @@ label start:
 
     n "I don't know yet. But I know who to ask."
 
-    scene black
-    with slow_fade
+    "She looked at the mirror, still cold and waiting on its stand."
 
-    centered "{size=+6}{color=#d4a373}THE CONFRONTATION{/color}{/size}"
+    n "Eleanor. There is one thing the mirror can show us that we have not asked. What it would show *you*."
 
-    pause 1.5
+    e "Me? I'm not guilty of anything."
 
-    # --- The confrontation ---
+    n "Every soul has a reflection, Eleanor. The mirror shows the guilty their sins. But it shows the innocent what they *fear* they have done."
+
+    "I looked at the mirror. It seemed to watch me back."
+
+    menu:
+        "Look into the mirror — face what it shows":
+            jump mirror_temptation
+
+        "Refuse — do not look":
+            "I shook my head."
+            e "No. I will not give it that hold over me. We know enough. Ashworth is guilty. Let us end this."
+            n "A wise choice, Eleanor. The mirror has no power over those who will not look."
+            jump confrontation
+
+    return
+
+# --- The darker path: the mirror tempts Eleanor ---
+label mirror_temptation:
+    "I stepped toward the mirror, my heart steady, and I looked into the glass."
+
+    "For a moment, nothing. And then—"
+
+    "I saw my reflection. But it was not the woman I had become."
+
+    "It was the woman I might have been, if I had claimed the jewel. If I had fed the hunger. If I had become the Devourer."
+
+    "She wore a crown of gold, and her eyes burned with a cold, familiar light. She was beautiful, and terrible, and she was *me*."
+
+    "And she spoke."
+
+    "Not aloud. In my mind. A voice that was mine and not mine."
+
+    "You could have had it all, Eleanor. The power. The name. The world at your feet. And you threw it away for—what? A quiet house? A woman who fears the dark?"
+
+    "The image flickered. Behind my golden self, I saw Neith—but Neith was afraid. Neith was watching me with the eyes of a stranger."
+
+    "You could have her too. Forever. You could make her never leave. You could bind her to you, as the jaguar bound your ancestors. All you have to do is reach into the glass."
+
+    "The mirror's cold crept up my arm. I could feel its hunger, patient and vast, waiting for me to *choose*."
+
+    $ tempted = True
+
+    menu:
+        "Resist — pull away from the mirror":
+            "I tore my hand away from the glass, gasping. The vision shattered into shards of silver light."
+            e "No. I am not that woman. I will never be that woman."
+            "The mirror's light died, and the room was cold and ordinary again."
+            n "Eleanor. You looked. What did it show you?"
+            "I met her eyes, and I did not look away."
+            e "A woman I refuse to become. That's all."
+            "Neith studied me for a long moment, then nodded."
+            n "Good. The mirror shows the truth, Eleanor. And the truth is that you are stronger than it knows."
+            jump confrontation
+
+        "Give in — let the mirror's power tempt you":
+            "The cold surged up my arm, and for a terrible, seductive moment, I *wanted* it. The power. The certainty. The endless, perfect control."
+            "My hand closed on the mirror's handle, and it was warm in my grip—alive."
+            e "Neith... it's so cold. And so warm. I can feel it—"
+            "Her hand closed over mine, and pulled me back from the glass."
+            n "Eleanor. Look at me. Not at it."
+            "I blinked, and the spell broke. The mirror went cold and dead in my hand."
+            e "I almost—"
+            n "I know. But you didn't. You are not your ancestors, Eleanor. And this mirror will not claim you."
+            "I set the mirror down, my hand trembling. But I had passed the test."
+            jump confrontation
+
+    return
+
+# --- The confrontation ---
+label confrontation:
     scene bg library
     with slow_fade
 
@@ -321,6 +505,9 @@ label start:
 
     "He drew a small revolver, and the room went cold."
 
+    if clue_origin:
+        e "It's over, Ashworth. We know about the Curator. We know about the man in the dark coat. The mirror was never yours to control—you were just another tool."
+
     menu:
         "Disarm him — rush him":
             "I did not hesitate. I lunged across the table, and the revolver went off—"
@@ -338,7 +525,18 @@ label start:
             "He lowered the gun, and the fight went out of him."
             c "I just wanted them to pay. That's all I ever wanted."
 
-    "We took Ashworth into custody, and the mirror went into a lead-lined box, where it would trouble no one again."
+    "We took Ashworth into custody, and the mirror went into a lead-lined box."
+
+    if tempted:
+        "I looked at the lead box, and I felt a faint echo of the cold—the temptation—still curling in the back of my mind."
+        "I had looked into the mirror, and I had seen the woman I refused to become. It would not claim me. But it would remember me."
+        e "Neith. Burn it. Do not bury it. We cannot risk anyone finding it again."
+        n "Are you sure?"
+        e "Yes. Some doors should not be left unlocked."
+        "We carried the box out to the garden and set it on the pyre. As the flames took it, the silver screamed—a sound like a thousand voices, silenced at last."
+        "And I felt the temptation die with it."
+    else:
+        "I did not look into the mirror. I did not need to. I knew the woman I was, and I did not need a cursed glass to tell me."
 
     scene black
     with slow_fade
@@ -363,19 +561,36 @@ label start:
 
     e "A little. I was hoping for something more... mysterious."
 
-    n "There will be other cases, Eleanor. The world is full of haunted things."
+    "Neith was quiet for a moment, watching the fire."
 
-    "She was quiet for a moment, watching the fire."
+    n "The mirror is gone, Eleanor. But the man in the dark coat—the one the Curator spoke of, who collects the returned artifacts—he is still out there."
 
-    n "But I am glad this one is over. I did not like that mirror."
+    e "You think there are more?"
+
+    n "I know there are. The mirror was not the first. And it will not be the last. Someone is gathering them."
+
+    "I looked at her, and in the firelight, I saw the weight of it in her eyes."
+
+    e "Then we'll be ready when they surface."
+
+    n "I know. But I am glad this one is over. I did not like that mirror."
 
     e "Why?"
 
     n "Because it showed me what I might have been, if I had chosen differently. A century of hunger, and I could have been the one feeding it."
 
+    if tempted:
+        "I was quiet for a moment, remembering the cold of the glass, the voice that was mine and not mine."
+        e "It showed me the same thing, Neith. A woman I refused to become."
+        "She looked at me, surprised."
+        n "You looked into it. And you walked away."
+        e "I had something to hold onto. A reason to resist."
+    else:
+        e "But you didn't. You chose mercy."
+
     "I reached out and took her hand."
 
-    e "But you didn't. You chose mercy. And you're here, with me, in a house that used to be a curse and is now a home."
+    e "And you're here, with me, in a house that used to be a curse and is now a home."
 
     "She looked at me, and in the firelight, her eyes were soft."
 
