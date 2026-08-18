@@ -1,0 +1,25 @@
+# --- Ren'Py generated / build junk ---
+# Compiled bytecode
+*.rpyc
+*.rpymc
+# Cache and analysis files
+cache/
+game/cache/
+# Saves (personal playtest data — don't commit)
+saves/
+game/saves/
+# Error reports
+traceback.txt
+errors.txt
+log.txt
+# --- macOS noise ---
+.DS_Store
+__MACOSX/
+._*
+# --- Editor / OS temp ---
+*.swp
+*.tmp
+*.bak
+# --- Build artifacts (if you later run the build/lint dist) ---
+dist/
+build/
