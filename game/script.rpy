@@ -12,6 +12,9 @@ define c = Character("Mr. Ashworth", color="#8fb3a8")   # the client
 define w = Character("Mrs. Bell", color="#d4a373")      # the banker's widow
 define cu = Character("The Curator", color="#b08050")   # antiquities dealer who sourced the mirror
 define g = Character("Giles", color="#888888")          # the Ashworth butler
+define l = Character("Lord Marlow", color="#8fb3a8")    # the cursed family patriarch
+define m2 = Character("Lady Marlow", color="#d4a373")   # his wife
+define r = Character("Rowan", color="#e8d8e8")           # their daughter
 
 # -------------------------------------------------------------------------------------------
 # IMAGE ALIASES — Backgrounds (reused from the trilogy)
@@ -606,6 +609,352 @@ label confrontation:
     pause 2.0
 
     centered "{size=+6}{color=#d4a373}END OF EPISODE ONE{/color}{/size}"
+
+    pause 2.0
+
+    return
+
+# -------------------------------------------------------------------------------------------
+# EPISODE TWO — THE CURSED FAMILY
+# -------------------------------------------------------------------------------------------
+label episode_two:
+    # Game State
+    $ clue_heirloom = False
+    $ clue_ledger2 = False
+    $ collector_seen = False
+
+    scene bg mansion_ext
+    with slow_fade
+
+    "A fortnight had passed since the mirror was burned. The mansion was quiet, the roses in bloom, and I had begun to think the world had run out of haunted things."
+
+    "I was wrong."
+
+    scene bg hallway
+    with slow_dissolve
+
+    show eleanor_neutral at left
+    show neith_neutral at right
+    with dissolve
+
+    e "Neith. There's a carriage at the gate. A very fine one."
+
+    n "A lord, then. Or a lady with a problem."
+
+    "A moment later, the butler announced our visitor—Lord Marlow, of the Marlow family, whose name I knew from the society pages and little else."
+
+    scene bg library
+    with slow_fade
+
+    "Lord Marlow was a tall, grey man with the careful bearing of someone who had spent a lifetime keeping secrets. He did not sit. He stood by the fire, turning a small object over in his hands."
+
+    show eleanor_neutral at left
+    show neith_neutral at right
+    with dissolve
+
+    l "You solved the Ashworth affair. The mirror. I know because I have been watching you, and because I have a problem of my own."
+
+    e "What kind of problem, Lord Marlow?"
+
+    "He held out the object. It was a small, ornate locket of tarnished silver, its face engraved with a crest—a rearing griffin."
+
+    "The same crest as the letter that had brought us the mirror."
+
+    l "This locket has been in my family for three hundred years. It is said to be cursed—that it brings ruin to whoever holds it. I did not believe it. I am a rational man."
+
+    l "But my son is dead, ladies. And my daughter is dying. And the locket is the only thing they both touched."
+
+    "Neith went very still. She reached for the locket, then stopped."
+
+    n "Lord Marlow. Where did your family come by this?"
+
+    l "It has always been ours. It is the Marlow crest."
+
+    n "No. That is not a Marlow crest. That is a Thorne crest."
+
+    "The room went cold. I stared at the locket, and I understood—the griffin, the same as the letter, the same as the mirror's trail."
+
+    e "Neith. The man in the dark coat. He's not collecting random artifacts. He's collecting *Thorne* artifacts."
+
+    n "And this one is the second piece."
+
+    scene black
+    with slow_fade
+
+    centered "{size=+6}{color=#d4a373}EPISODE TWO — THE CURSED FAMILY{/color}{/size}"
+
+    pause 1.5
+
+    # --- The investigation ---
+    scene bg library
+    with slow_fade
+
+    "We examined the locket in the library, the fire crackling, the rain tapping at the windows. Neith held it up to the light, and I saw her frown."
+
+    show eleanor_neutral at left
+    show neith_neutral at right
+    with dissolve
+
+    e "What is it?"
+
+    n "The locket is not cursed, Eleanor. It is *keyed*. It only responds to the blood of the family it was bound to—the Thorne blood."
+
+    e "But the Marlows have held it for three hundred years."
+
+    n "Which means the Marlows are Thorne. A branch of the family that broke away, long ago, and took the locket with them. They have been carrying a piece of the old curse without knowing it."
+
+    e "And the man in the dark coat wants it back."
+
+    n "He wants all of it. The mirror. The locket. Whatever else is out there. He is assembling something."
+
+    "I looked at the locket, and I felt the weight of it—a piece of my own bloodline, hidden in a stranger's family for three centuries."
+
+    e "Then we have to find out what it does. And we have to stop him from taking it."
+
+    n "There is only one way to know what the locket holds, Eleanor. Someone with Thorne blood must open it."
+
+    "We both looked at the locket. And then we both looked at me."
+
+    e "You want me to open it."
+
+    n "It is the only way. And I will be right here."
+
+    menu:
+        "Open the locket — face what it holds":
+            jump open_locket
+
+        "Refuse — find another way":
+            jump refuse_locket
+
+    return
+
+label open_locket:
+    "I took the locket in my hands. It was cold, and it seemed to *know* me—to lean toward my blood like a thing that had been waiting."
+
+    "I pressed the catch, and it sprang open."
+
+    with flash
+
+    "Inside was not a portrait. It was a *name*, engraved in a hand I knew—the hand of the first Thorne."
+
+    "And beneath it, a single word: *Debt.*"
+
+    "The room seemed to darken. I felt a cold hand close around my heart, and I heard—faint, distant—a voice that was not Neith's."
+
+    "You are the blood. You are the debt. You are the one who must pay."
+
+    e "Neith. It's speaking to me."
+
+    n "What is it saying?"
+
+    e "It says I owe a debt. That the bloodline must pay."
+
+    "Neith's face went pale."
+
+    n "Eleanor. The locket is not just a piece of the curse. It is a *claim*. It marks the bearer as the one who must complete the old bargain."
+
+    e "The bargain with the jaguar? That's ended."
+
+    n "Not the jaguar. The *older* hunger. The thing the jaguar was bound to watch. The locket is a piece of *that*."
+
+    "I stared at the name in the locket. The first Thorne. And I understood, with a cold clarity, that the man in the dark coat was not trying to collect the pieces."
+
+    "He was trying to *reunite* them. And the locket had just marked me as the key."
+
+    $ clue_heirloom = True
+
+    scene black
+    with slow_fade
+
+    centered "{size=+6}{color=#d4a373}THE COLLECTOR{/color}{/size}"
+
+    pause 1.5
+
+    jump collector_encounter
+
+label refuse_locket:
+    "I set the locket down, my hand steady."
+
+    e "No. I will not open it. I have spent three years refusing to be my name, Neith. I will not let a piece of metal decide who I am."
+
+    n "Then we find another way. But we must be quick—the man in the dark coat will not wait."
+
+    "I looked at the locket, cold and patient on the table. And I felt, more than saw, that it was watching me."
+
+    e "We need to know what it is before he takes it. But we do it on our terms."
+
+    n "Agreed. Let us find out who has been hunting Thorne artifacts—and why."
+
+    scene black
+    with slow_fade
+
+    centered "{size=+6}{color=#d4a373}THE COLLECTOR{/color}{/size}"
+
+    pause 1.5
+
+    jump collector_encounter
+
+label collector_encounter:
+    scene bg library
+    with slow_fade
+
+    "We did not find the man in the dark coat. He found us."
+
+    "He was standing in the library when we returned—a tall, pale figure in a long dark coat, his face half-hidden in shadow. He did not move as we entered. He only watched, patient as the tide."
+
+    show eleanor_neutral at left
+    show neith_neutral at right
+    with dissolve
+
+    e "Who are you?"
+
+    "His voice was low and calm, like water over old stone."
+
+    cu "I am the one who has been waiting for you, Eleanor Thorne. For a very long time."
+
+    e "You're the one who collects the artifacts. The mirror. The locket."
+
+    cu "I do not collect them. I *reunite* them. They are pieces of a whole—a whole that was stolen from your family, and scattered to the winds."
+
+    n "Stolen? The Thorne bloodline was a curse. You are trying to bring it back."
+
+    cu "I am trying to restore what was *rightfully* theirs. The power your ancestors were robbed of. The power that was meant to be yours."
+
+    "He stepped closer, and I saw his eyes—old, and patient, and certain."
+
+    cu "You are the blood, Eleanor. The locket has marked you. You are the one who can complete the assembly. You can have it all—the power, the name, the legacy your family was denied."
+
+    cu "Or you can let it be scattered forever, and watch the pieces fall into the hands of those who will misuse them."
+
+    "He held out his hand. In it, the locket—and something else. A shard of dark glass, humming with a cold light."
+
+    cu "The mirror is gone. But I have others. Join me, and we will finish what the first Thorne began."
+
+    $ collector_seen = True
+
+    menu:
+        "Refuse the collector — stand against him":
+            jump refuse_collector
+
+        "Hear him out — ask what he truly wants":
+            jump question_collector
+
+    return
+
+label refuse_collector:
+    "I did not move. I held his gaze, steady and cold."
+
+    e "I have spent three years refusing to be my name, and I will not start now. The Thorne power was a curse, not a legacy. And I will not help you bring it back."
+
+    "The collector's eyes flickered—not with anger, but with something almost like sorrow."
+
+    cu "You are the first Thorne in a thousand years who could have completed it. And you refuse."
+
+    e "I refuse to become what my ancestors were."
+
+    "He was silent for a long moment. Then he nodded, slowly."
+
+    cu "Then I will find another way. But know this, Eleanor Thorne—the pieces will not stay scattered forever. And when they reunite, with or without you, the old hunger will wake."
+
+    "He turned, and the shadows seemed to swallow him. When I blinked, he was gone."
+
+    "The locket lay on the table, cold and still. He had left it. He did not need it—not yet."
+
+    e "Neith. He's going to keep hunting."
+
+    n "I know. And we are going to keep stopping him."
+
+    scene black
+    with slow_fade
+
+    centered "{size=+6}{color=#d4a373}EPILOGUE{/color}{/size}"
+
+    pause 1.5
+
+    jump episode_two_epilogue
+
+label question_collector:
+    "I did not refuse. I held his gaze, and I asked the question that had been burning in me since the mirror."
+
+    e "What are you really trying to reunite? The mirror, the locket—what are they pieces of?"
+
+    "The collector was silent for a long moment. Then he spoke, and his voice was heavy."
+
+    cu "Before the jaguar, there was an older hunger. The thing the jaguar was bound to watch. The first Thorne did not only bargain with the jaguar—he *shattered* the older hunger, and bound each piece to an artifact, to keep it from ever reuniting."
+
+    cu "The jaguar was the guard. You ended the guard, Eleanor. And now the pieces are free to come together again."
+
+    e "And you want to reunite them. To bring the older hunger back."
+
+    cu "I want to *finish* what was started. The power was meant to be the Thorne's. It was stolen from them. I am only returning what is rightfully yours."
+
+    "I looked at him, and I saw the certainty in his eyes—the belief that he was doing something just."
+
+    e "You're wrong. The power was never meant to be anyone's. It was a curse, and my family paid for it with their souls."
+
+    "The collector's expression did not change. But something in his eyes went cold."
+
+    cu "Then we are at an impasse, Eleanor Thorne. And I am sorry for it."
+
+    "He turned, and the shadows swallowed him. When I blinked, he was gone."
+
+    e "Neith. He knows what the pieces are. And he's not going to stop."
+
+    n "Neither are we."
+
+    scene black
+    with slow_fade
+
+    centered "{size=+6}{color=#d4a373}EPILOGUE{/color}{/size}"
+
+    pause 1.5
+
+    jump episode_two_epilogue
+
+label episode_two_epilogue:
+    scene bg hallway
+    with slow_fade
+
+    "The mansion was quiet that night. The fire crackled, and the rain fell, and I sat with the locket on the table between us."
+
+    show eleanor_neutral at left
+    show neith_neutral at right
+    with dissolve
+
+    e "He called it the older hunger. The thing the jaguar was bound to watch."
+
+    n "I have heard of it, Eleanor. In the oldest stories of the Duat. A hunger older than the gods themselves, that was broken and scattered so it could never return."
+
+    e "And the first Thorne shattered it. Bound the pieces to artifacts."
+
+    n "And now the pieces are finding their way back together. The mirror. The locket. And there will be more."
+
+    "I looked at the locket, cold and patient on the table."
+
+    e "He said I was the key. That the locket marked me."
+
+    n "It did. But that does not mean you must turn it."
+
+    "She reached across and took my hand."
+
+    n "You are not your name, Eleanor. You never were. And whatever the collector believes, you are the one who will decide what happens to those pieces."
+
+    e "And if he's right? If the older hunger wakes?"
+
+    n "Then we will face it. Together. As we have faced everything."
+
+    "I looked at her, and in the firelight, I felt the weight of it lift, just a little."
+
+    e "Together, then."
+
+    scene black
+    with slow_fade
+
+    centered "{size=+8}{color=#c8a2c8}The Mansion Mysteries will return...{/color}{/size}"
+
+    pause 2.0
+
+    centered "{size=+6}{color=#d4a373}END OF EPISODE TWO{/color}{/size}"
 
     pause 2.0
 
