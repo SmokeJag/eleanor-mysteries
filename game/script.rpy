@@ -58,13 +58,13 @@ label start:
         "Episode One — Upon Reflection":
             jump episode_one
 
-        "Episode Two — The Cursed Family":
+        "Episode Two — A Family Cursed":
             jump episode_two
 
         "Episode Three — The Duat's Echo":
             jump episode_three
 
-        "Episode Four — The Jaguar's Shadow":
+        "Episode Four — Shadow of the Jaguar":
             jump episode_four
 
     return
@@ -646,7 +646,7 @@ label confrontation:
     return
 
 # -------------------------------------------------------------------------------------------
-# EPISODE TWO — THE CURSED FAMILY
+# EPISODE TWO — A FAMILY CURSED
 # -------------------------------------------------------------------------------------------
 label episode_two:
     # Game State
@@ -712,7 +712,7 @@ label episode_two:
     scene black
     with slow_fade
 
-    centered "{size=+6}{color=#d4a373}EPISODE TWO — THE CURSED FAMILY{/color}{/size}"
+    centered "{size=+6}{color=#d4a373}EPISODE TWO — A FAMILY CURSED{/color}{/size}"
 
     pause 1.5
 
@@ -1227,7 +1227,7 @@ label episode_three_epilogue:
     return
 
 # -------------------------------------------------------------------------------------------
-# EPISODE FOUR — THE JAGUAR'S SHADOW
+# EPISODE FOUR — SHADOW OF THE JAGUAR
 # -------------------------------------------------------------------------------------------
 label episode_four:
     # Game State
