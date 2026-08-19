@@ -39,9 +39,29 @@ define slow_fade = Fade(1.0, 0.5, 1.0)
 define flash = Fade(0.1, 0.0, 0.5, color="#ffffff")
 
 # -------------------------------------------------------------------------------------------
-# EPISODE ONE — UPON REFLECTION
+# MAIN MENU — episode select
 # -------------------------------------------------------------------------------------------
 label start:
+    scene black
+    with slow_fade
+
+    centered "{size=+8}{color=#c8a2c8}The Mansion Mysteries{/color}{/size}"
+
+    pause 1.0
+
+    menu:
+        "Episode One — Upon Reflection":
+            jump episode_one
+
+        "Episode Two — The Cursed Family":
+            jump episode_two
+
+    return
+
+# -------------------------------------------------------------------------------------------
+# EPISODE ONE — UPON REFLECTION
+# -------------------------------------------------------------------------------------------
+label episode_one:
     # Game State
     $ clue_letter = False
     $ clue_ledger = False
