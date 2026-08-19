@@ -31,6 +31,8 @@ image eleanor_neutral = Solid("#c8a2c8")
 image eleanor_determined = Solid("#c8a2c8")
 image neith_neutral = Solid("#e8d8e8")
 image curator = Solid("#b08050")
+image corvus = "images/sprites/corvus.png"
+image scarab_amulet = "images/ui/scarab_amulet.png"
 
 # -------------------------------------------------------------------------------------------
 # CUSTOM TRANSITIONS
@@ -826,6 +828,9 @@ label collector_encounter:
 
     "He was standing in the library when we returned—a tall, pale figure in a long dark coat, his face half-hidden in shadow. He did not move as we entered. He only watched, patient as the tide."
 
+    show corvus at center
+    with dissolve
+
     show eleanor_neutral at left
     show neith_neutral at right
     with dissolve
@@ -1110,6 +1115,9 @@ label collector_episode:
     "The collector did not wait long."
 
     "He was waiting for us at the mansion when we returned, a tall pale figure in the lamplight, the amulet in his hand."
+
+    show corvus at center
+    with dissolve
 
     show eleanor_neutral at left
     show neith_neutral at right
