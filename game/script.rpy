@@ -686,10 +686,14 @@ label episode_two:
 
     "A fortnight had passed since the mirror was burned. The mansion was quiet, the roses in bloom, and I had begun to think the world had run out of haunted things."
 
-    "I was wrong."
+    "That, I have learned, is always the moment the world chooses to prove you wrong."
 
     scene bg hallway
     with slow_dissolve
+
+    "I was in the study when the carriage came up the drive—a heavy black coach with a crest on the door, drawn by two matched greys. I watched it from the window, and I felt the small, familiar prickle at the back of my neck."
+
+    "Trouble did not arrive quietly in this house. It arrived with a crest and a driver and a problem it expected us to solve."
 
     show eleanor_neutral at left
     show neith_neutral at right
@@ -699,12 +703,18 @@ label episode_two:
 
     n "A lord, then. Or a lady with a problem."
 
+    e "And you can tell that from a carriage?"
+
+    n "I can tell it from the way you said 'very fine.' You only sound like that when you're about to meet someone important."
+
     "A moment later, the butler announced our visitor—Lord Marlow, of the Marlow family, whose name I knew from the society pages and little else."
 
     scene bg library
     with slow_fade
 
-    "Lord Marlow was a tall, grey man with the careful bearing of someone who had spent a lifetime keeping secrets. He did not sit. He stood by the fire, turning a small object over in his hands."
+    "Lord Marlow was a tall, grey man with the careful bearing of someone who had spent a lifetime keeping secrets. He did not sit. He stood by the fire, turning a small object over in his hands, as if he did not quite trust his own fingers to hold it."
+
+    "The firelight caught his face, and I saw the true cost of the visit—the hollows under his eyes, the way his jaw worked when he was not speaking. A man who had been holding his breath for weeks."
 
     show eleanor_neutral at left
     show neith_neutral at right
@@ -718,11 +728,15 @@ label episode_two:
 
     "The same crest as the letter that had brought us the mirror."
 
+    "The same griffin that had been following us, I now understood, for longer than we had known to look."
+
     l "This locket has been in my family for three hundred years. It is said to be cursed—that it brings ruin to whoever holds it. I did not believe it. I am a rational man."
+
+    "He said it the way men say things they have stopped believing, but are not ready to give up."
 
     l "But my son is dead, ladies. And my daughter is dying. And the locket is the only thing they both touched."
 
-    "Neith went very still. She reached for the locket, then stopped."
+    "Neith went very still. She reached for the locket, then stopped—her hand hovering, as if the object might burn her."
 
     n "Lord Marlow. Where did your family come by this?"
 
@@ -731,6 +745,8 @@ label episode_two:
     n "No. That is not a Marlow crest. That is a Thorne crest."
 
     "The room went cold. I stared at the locket, and I understood—the griffin, the same as the letter, the same as the mirror's trail."
+
+    "It was not a coincidence. It had never been a coincidence."
 
     e "Neith. The man in the dark coat. He's not collecting random artifacts. He's collecting *Thorne* artifacts."
 
@@ -860,6 +876,8 @@ label collector_encounter:
 
     "He was standing in the library when we returned—a tall, pale figure in a long dark coat, his face half-hidden in shadow. He did not move as we entered. He only watched, patient as the tide."
 
+    "I had seen his like before, in the halls of the Duat and the heart of a pyramid. The ones who waited. The ones who had decided, long ago, what they were willing to do."
+
     show corvus at center
     with dissolve
 
@@ -882,6 +900,8 @@ label collector_encounter:
     cu "I am trying to restore what was *rightfully* theirs. The power your ancestors were robbed of. The power that was meant to be yours."
 
     "He stepped closer, and I saw his eyes—old, and patient, and certain."
+
+    "And I saw, too, the thing that made him dangerous. He was not mad. He was convinced. And a man who believes he is doing right will do terrible things without once flinching."
 
     cu "You are the blood, Eleanor. The locket has marked you. You are the one who can complete the assembly. You can have it all—the power, the name, the legacy your family was denied."
 
@@ -978,6 +998,8 @@ label episode_two_epilogue:
 
     "The mansion was quiet that night. The fire crackled, and the rain fell, and I sat with the locket on the table between us."
 
+    "It lay there like a small, patient accusation—a piece of my own blood, worn by strangers for three centuries, now come home to ask for what it was owed."
+
     show eleanor_neutral at left
     show neith_neutral at right
     with dissolve
@@ -990,7 +1012,7 @@ label episode_two_epilogue:
 
     n "And now the pieces are finding their way back together. The mirror. The locket. And there will be more."
 
-    "I looked at the locket, cold and patient on the table."
+    "I looked at the locket, cold and patient on the table. It seemed to know I was looking at it."
 
     e "He said I was the key. That the locket marked me."
 
@@ -1000,11 +1022,15 @@ label episode_two_epilogue:
 
     n "You are not your name, Eleanor. You never were. And whatever the collector believes, you are the one who will decide what happens to those pieces."
 
+    "Her hand was warm. It was always warm, even when everything around us was cold."
+
     e "And if he's right? If the older hunger wakes?"
 
     n "Then we will face it. Together. As we have faced everything."
 
     "I looked at her, and in the firelight, I felt the weight of it lift, just a little."
+
+    "Not because the danger was gone. But because I was not carrying it alone."
 
     e "Together, then."
 
@@ -1036,6 +1062,8 @@ label episode_three:
 
     "'Ladies, I have come into possession of an object that I believe belongs, by right, to the Thorne family. It is a scarab amulet of unusual antiquity. I would be grateful for your counsel.'"
 
+    "I read it twice. It was the politeness that unsettled me—the careful way he had written 'by right,' as if he were not sure the right was welcome."
+
     show eleanor_neutral at left
     show neith_neutral at right
     with dissolve
@@ -1044,16 +1072,24 @@ label episode_three:
 
     n "I know what it is, Eleanor. I have not seen it in a hundred years, but I know it."
 
+    "There was something in her voice I had not heard in a long time. A hush, almost—the sound of a door opening onto a room she had closed long ago."
+
     e "You've seen it before?"
 
     n "I stood guard over it, in the Duat. It was the seal on the tomb of a Thorne who tried to escape the bargain—who hid a piece of the hunger where he hoped it would never be found."
 
     n "If it is here, in England, then someone has brought it out. And that means the collector is closer than we thought."
 
+    "She said it calmly. But I had learned to read the small tells in her—the way her hand rested on the table, the way she did not quite meet my eye."
+
+    "Whatever the amulet was, it meant something to her that it did not mean to me."
+
     scene bg library
     with slow_fade
 
     "Professor Ashe was a thin, earnest man, his rooms cluttered with shards, papyrus, and the smell of old sand. He set the amulet before us with a reverence that bordered on fear."
+
+    "He had the look of a man who had spent his life believing in the rational order of things, and had recently found a crack in it."
 
     show eleanor_neutral at left
     show neith_neutral at right
@@ -1077,7 +1113,9 @@ label episode_three:
 
     e "What do you fear, Neith?"
 
-    "She was quiet for a long moment. Then she took the amulet from Ashe, and her voice was steady."
+    "She was quiet for a long moment. The fire crackled. Somewhere in the museum, a clock ticked."
+
+    "Then she took the amulet from Ashe, and her voice was steady—too steady, the way a voice is when it is holding something very carefully."
 
     n "That I did not choose mercy at all. That I chose it because I was afraid of the alternative—and that I am not the good Thorne I believed."
 
@@ -1103,6 +1141,8 @@ label neith_reads_amulet:
 
     e "Neith!"
 
+    "I caught her as she swayed, her hand cold in mine. For a moment, I thought she would pull away. Then she gripped me back, hard, as if I were the only solid thing in the room."
+
     n "I saw it, Eleanor. The thing I could have become. The hunger I could have fed, if I had been weaker."
 
     "She looked at me, and her eyes were bright."
@@ -1112,6 +1152,10 @@ label neith_reads_amulet:
     e "Then you've passed its trial."
 
     n "No. I have passed *my* trial. The amulet only showed me what I already knew."
+
+    "I held her hand a moment longer than I needed to. Not because she was weak—she was never that. But because a century of standing watch deserved to be witnessed."
+
+    "And because I was proud of her. I was so proud of her."
 
     scene black
     with slow_fade
@@ -1266,13 +1310,19 @@ label episode_four:
 
     "The letter this time was not a letter. It was a small parcel, left on our doorstep in the night, wrapped in oilcloth and bound with black cord."
 
+    "I found it at dawn, when I went out to check the roses. It was cold to the touch, and it had been left with a care that made my skin prickle—not thrown, not hidden, but placed, as if the one who left it wanted to be sure I would find it."
+
     "Inside, on a bed of black velvet, lay the jade jaguar."
+
+    "I knew it before I touched it. I knew it the way you know a voice from a dream."
 
     show eleanor_neutral at left
     show neith_neutral at right
     with dissolve
 
     "Neith went very still. She had not seen it since the day she gave it to me in the Duat—the day it led us into the pyramid's heart."
+
+    "A lifetime ago. Three years. And yet the sight of it brought the whole journey back in a single breath—the river, the jungle, the hunger, the choice."
 
     e "Neith. That's—"
 
@@ -1293,6 +1343,8 @@ label episode_four:
     "I looked at the pendant, and I felt a pull I could not name—a warmth, and a warning, both at once."
 
     "It was not a curse. It was a *test*. The same test I had passed in the pyramid."
+
+    "And I knew, with a certainty that settled into my bones, that I would have to pass it again."
 
     menu:
         "Take the jade jaguar — meet the test again":
@@ -1473,6 +1525,10 @@ label ep4_ending:
 
     "The mansion was quiet in the dawn. The pieces were dust, the hunger ended, and the shadow that had followed the Thorne name for a thousand years was, at last, gone."
 
+    "I stood at the window and watched the sun come up over the garden. It was an ordinary sunrise—no fanfare, no choir. Just light, arriving as it always did."
+
+    "And that, I thought, was the point. After a thousand years of hunger, the morning came quietly."
+
     show eleanor_neutral at left
     show neith_neutral at right
     with dissolve
@@ -1488,6 +1544,10 @@ label ep4_ending:
     e "I had help. I had you."
 
     "She took my hand, and we stood together in the quiet house that had once been a house of horrors, and was now a home."
+
+    "We stood there for a long while, saying nothing. There was nothing left to say. The curse was ended, the pieces were dust, and the woman who had once been a name was simply—Eleanor."
+
+    "I had spent three years refusing to be my bloodline. And at last, it had stopped asking."
 
     scene black
     with slow_fade
