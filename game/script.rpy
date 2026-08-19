@@ -88,10 +88,16 @@ label episode_one:
 
     "Three years had passed since the hunger was ended. The black stone had been scrubbed clean, the broken windows replaced, and the gardens—once choked with shadow—now bloomed with roses."
 
+    "I still woke some mornings half-expecting the old weight in my chest, the certainty that the house was watching me the way it had once watched my ancestors. But the feeling never came."
+
     "It was still a strange house, full of old secrets. But it was *our* house now."
 
     scene bg hallway
     with slow_dissolve
+
+    "The morning light came through the tall windows in long, warm shafts, catching the dust motes and the polish on the banister. A fire had been laid, though no one had lit it yet. Somewhere in the kitchen, a kettle began to sing."
+
+    "This was the part I loved, and the part I still found strange—the ordinary rhythm of a house that was only a house."
 
     show eleanor_neutral at left
     show neith_neutral at right
@@ -102,6 +108,8 @@ label episode_one:
     n "On the table. There's a letter with a very expensive seal."
 
     "I picked it up. The wax was deep crimson, pressed with a crest I did not recognise—a rearing griffin."
+
+    "I turned it over in my fingers, feeling the weight of it, the deliberate expense of the paper, the care someone had taken to be noticed."
 
     e "Who sends us a letter with a griffin on it?"
 
@@ -118,6 +126,10 @@ label episode_one:
     e "You sound almost pleased."
 
     n "It beats cataloguing the library. Come on, Sherlock. We have a case."
+
+    "She smiled as she said it, and it warmed me in a way the fire had not yet managed. Three years, and the sight of her reaching for her coat still did that."
+
+    "I followed her down the hall, and the quiet morning folded up behind us like a page turned."
 
     scene black
     with slow_fade
@@ -240,6 +252,8 @@ label investigate_family:
     with slow_fade
 
     "Mrs. Bell lived in a modest house in a quiet square—a widow's home, kept neat and spare, with the photographs of a dead man still on the mantel."
+
+    "I always found those rooms the hardest to enter. Not the grand houses, with their vaults and their secrets, but the small ones, where a life had been lived and then emptied out. The dust on a mantel. The second cup that no one poured."
 
     show eleanor_neutral at left
     show neith_neutral at right
@@ -454,6 +468,8 @@ label mirror_temptation:
 
     "She wore a crown of gold, and her eyes burned with a cold, familiar light. She was beautiful, and terrible, and she was *me*."
 
+    "I knew her. I had met her in the Hall of Two Truths, and in the heart of the pyramid, and in a thousand smaller moments I had chosen to walk away from. She was every decision I had not made."
+
     "And she spoke."
 
     "Not aloud. In my mind. A voice that was mine and not mine."
@@ -583,7 +599,9 @@ label confrontation:
     scene bg hallway
     with slow_fade
 
-    "The mansion was quiet that night. The fire crackled in the library, and the rain tapped against the windows."
+    "The mansion was quiet that night. The fire crackled in the library, and the rain tapped against the windows—a soft, steady rhythm like a held breath."
+
+    "I had poured two glasses of wine, and I had not needed to pour a third. That was the other thing I loved about this life: it was small, and it was ours."
 
     show eleanor_neutral at left
     show neith_neutral at right
@@ -595,7 +613,13 @@ label confrontation:
 
     e "A little. I was hoping for something more... mysterious."
 
-    "Neith was quiet for a moment, watching the fire."
+    n "There will be other cases, Eleanor. The world is full of haunted things."
+
+    "She was quiet for a moment, watching the fire, and I watched her—the way the light moved over her face, the way she had learned, slowly, to let herself rest."
+
+    "A century in the Duat. A century of standing watch, waiting for a Thorne who might choose mercy. And now she was here, in a warm room, in a house that was a home."
+
+    "I thought about how strange it was that she, of all the Thornes, was the one who had carried that weight alone for so long. And how glad I was that she did not carry it alone anymore."
 
     n "The mirror is gone, Eleanor. But the man in the dark coat—the one the Curator spoke of, who collects the returned artifacts—he is still out there."
 
@@ -603,7 +627,7 @@ label confrontation:
 
     n "I know there are. The mirror was not the first. And it will not be the last. Someone is gathering them."
 
-    "I looked at her, and in the firelight, I saw the weight of it in her eyes."
+    "I looked at her, and in the firelight, I saw the weight of it in her eyes. But I also saw something else—a steadiness that had not been there a year ago."
 
     e "Then we'll be ready when they surface."
 
@@ -619,6 +643,7 @@ label confrontation:
         "She looked at me, surprised."
         n "You looked into it. And you walked away."
         e "I had something to hold onto. A reason to resist."
+        "I said it lightly, but it was truer than I knew how to say. She was that reason. She had been, from the moment she took my hand on a dock in the middle of a river."
     else:
         e "But you didn't. You chose mercy."
 
@@ -631,6 +656,8 @@ label confrontation:
     n "I know. And I would not trade it for anything."
 
     "We sat together in the quiet, the rain falling, the fire burning, and the mansion—once a house of horrors—felt, for the first time in its long, dark history, like a place of peace."
+
+    "Outside, the rain kept its steady rhythm. Inside, we did not need to speak. Some evenings were simply enough."
 
     scene black
     with slow_fade
