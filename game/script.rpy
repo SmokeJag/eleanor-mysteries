@@ -16,6 +16,7 @@ define l = Character("Lord Marlow", color="#8fb3a8")    # the cursed family patr
 define m2 = Character("Lady Marlow", color="#d4a373")   # his wife
 define r = Character("Rowan", color="#e8d8e8")           # their daughter
 define pa = Character("Professor Ashe", color="#8fb3a8")   # Egyptologist
+define j = Character("The Jaguar", color="#8fb3a8")        # the freed spirit
 
 # -------------------------------------------------------------------------------------------
 # IMAGE ALIASES — Backgrounds (reused from the trilogy)
@@ -33,6 +34,7 @@ image neith_neutral = Solid("#e8d8e8")
 image curator = Solid("#b08050")
 image corvus = "images/sprites/corvus.png"
 image scarab_amulet = "images/ui/scarab_amulet.png"
+image jaguar_spirit = Solid("#1a3a1a")
 
 # -------------------------------------------------------------------------------------------
 # CUSTOM TRANSITIONS
@@ -61,6 +63,9 @@ label start:
 
         "Episode Three — The Duat's Echo":
             jump episode_three
+
+        "Episode Four — The Jaguar's Shadow":
+            jump episode_four
 
     return
 
@@ -1216,6 +1221,255 @@ label episode_three_epilogue:
     pause 2.0
 
     centered "{size=+6}{color=#d4a373}END OF EPISODE THREE{/color}{/size}"
+
+    pause 2.0
+
+    return
+
+# -------------------------------------------------------------------------------------------
+# EPISODE FOUR — THE JAGUAR'S SHADOW
+# -------------------------------------------------------------------------------------------
+label episode_four:
+    # Game State
+    $ jade_awake = False
+    $ jaguar_guide = False
+
+    scene bg library
+    with slow_fade
+
+    "The letter this time was not a letter. It was a small parcel, left on our doorstep in the night, wrapped in oilcloth and bound with black cord."
+
+    "Inside, on a bed of black velvet, lay the jade jaguar."
+
+    show eleanor_neutral at left
+    show neith_neutral at right
+    with dissolve
+
+    "Neith went very still. She had not seen it since the day she gave it to me in the Duat—the day it led us into the pyramid's heart."
+
+    e "Neith. That's—"
+
+    n "The jaguar. The key. The piece that bound the hunger."
+
+    e "But we ended the bargain. We destroyed the jade jaguar in the temple."
+
+    n "We destroyed the one I gave you, Eleanor. This is a *different* jade jaguar. The collector has been busy."
+
+    "She reached for it, then stopped. In the lamplight, the pendant's eyes seemed to gleam."
+
+    n "It is the fourth piece. And it is keyed to you."
+
+    e "To me?"
+
+    n "To your journey. To the woman who freed the jaguar rather than fed it. It is the piece that remembers *you*."
+
+    "I looked at the pendant, and I felt a pull I could not name—a warmth, and a warning, both at once."
+
+    "It was not a curse. It was a *test*. The same test I had passed in the pyramid."
+
+    menu:
+        "Take the jade jaguar — meet the test again":
+            jump take_jade
+
+        "Refuse — do not touch it":
+            jump refuse_jade
+
+    return
+
+label take_jade:
+    "I reached out and took the jade jaguar in my hand."
+
+    with flash
+
+    "The room dissolved, and I was in the jungle again—the green dark, the temple, the jaguar watching me from the dais."
+
+    "But this time, the jaguar was not the hunger. It was the freed spirit—the guardian I had unbound in the pyramid."
+
+    $ jaguar_guide = True
+
+    show jaguar_spirit at center
+    with dissolve
+
+    j "You came back, little Thorne. I knew you would."
+
+    e "You're the jaguar. The one I freed in the temple."
+
+    j "I am the echo of it. A piece of the older hunger that was bound into this jade, to watch over the one who ended the bargain. I am your guardian now, Eleanor. Not the hunger—the memory of what you chose."
+
+    e "What do you want?"
+
+    j "To warn you. The raven—Corvus—he does not seek to reunite the older hunger to destroy it. He seeks to *become* it. And the final piece is not an object, Eleanor. It is *you*."
+
+    "The vision flickered. I felt the weight of it—the truth the collector had not spoken."
+
+    e "I'm the last piece."
+
+    j "You are the key that turns the lock. With you, the hunger wakes whole. Without you, it can never be complete. Corvus does not need the artifacts. He needs *you* to accept them."
+
+    "I let the jade jaguar go, and the vision faded. I was in the library again, Neith's hand on my arm."
+
+    jump jaguar_confrontation
+
+label refuse_jade:
+    "I drew my hand back. The jade jaguar watched me, and I felt the familiar pull—the voice that had tempted me in the mirror, the hunger that was my name."
+
+    e "No. I will not take it. I have faced this test before, and I will not fail it now."
+
+    "The jade went cold and still. I had refused the invitation."
+
+    n "You are wise, Eleanor. The piece wants you to take it, to complete the set. You have denied it the key."
+
+    "But I knew the collector would not stop. If I would not turn the key, he would find another way."
+
+    jump none
+
+label none:
+    "Neith's hand was steady on my arm. The jade jaguar lay cold on the desk, its eyes dark."
+
+    scene bg hallway
+    with slow_fade
+
+    show eleanor_neutral at left
+    show neith_neutral at right
+    with dissolve
+
+    e "Corvus. He's not trying to collect the artifacts. He's trying to make *me* the key."
+
+    n "And if you refuse, he will try to force you. Or find another Thorne."
+
+    e "There are no other Thornes, Neith. I am the last."
+
+    "She looked at me, and in the firelight, her eyes were heavy."
+
+    n "Then we have one choice left, Eleanor. Face him before he completes the set. And end this."
+
+    jump ep4_finale
+
+label jaguar_confrontation:
+    "The vision faded, and I was back in the library—Neith's hand steady on my arm, the jade jaguar cold and still in my palm."
+
+    "The jaguar's warning burned in me: *The final piece is not an object. It is you.*"
+
+    show neith_neutral at right
+
+    e "Neith. The jaguar told me the truth. Corvus doesn't need the artifacts. He needs *me* to accept them. I'm the key that turns the lock."
+
+    n "Then he will come for you, Eleanor. And we must be ready."
+
+    e "No. I will go to him. End this before he can complete the set."
+
+    n "Not alone."
+
+    "She took my hand, and I felt the strength of it."
+
+    n "We face him together. As we have faced everything."
+
+    jump ep4_finale
+
+label ep4_finale:
+    scene bg library
+    with slow_fade
+
+    "The mansion was still that night. And then, without a sound, Corvus was in the room—the four artifacts laid out on the table before him like an offering."
+
+    show corvus at center
+    with dissolve
+
+    show eleanor_neutral at left
+    show neith_neutral at right
+    with dissolve
+
+    cu "You have refused the key, Eleanor. And yet you come to me. Brave, or foolish."
+
+    e "Both, perhaps. You said you wanted to restore the family name, Corvus. But the truth is you want to *become* the hunger."
+
+    "He was silent. Then he nodded, slowly."
+
+    cu "The hunger is the Thorne destiny. We were meant to be the greatest of all bloodlines. My line was cheated out of it—hidden, scattered, forgotten. I will not let it end in a quiet house and a woman who refuses her own name."
+
+    e "My name was a curse, Corvus. I ended it. And I will end this, too."
+
+    cu "You cannot destroy the pieces. Only a Thorne can. And you will not."
+
+    "He held out his hand. In it, the mirror's shard, the locket, the amulet, the jade jaguar—all four pieces, humming with a cold, hungry light."
+
+    cu "Take them, Eleanor. Complete the set. Be the woman you were always meant to be."
+
+    menu:
+        "Take the pieces — accept the power":
+            jump ep4_power
+
+        "Refuse the pieces — destroy them":
+            jump ep4_destroy
+
+    return
+
+label ep4_power:
+    "I looked at the pieces, and I felt the pull—the hunger that was my name, the power that had tempted my ancestors for a thousand years."
+
+    "And I remembered the jaguar's words. The key that turns the lock. The woman I refused to become."
+
+    e "No, Corvus. I will not be the woman you want."
+
+    "I swept my hand across the table, scattering the pieces across the floor. The hunger screamed, and Corvus lunged—but Neith was there, and together we held the line."
+
+    "The pieces lay shattered on the stone, and the older hunger, broken and scattered, could not reunite."
+
+    "Corvus looked at me, and for the first time, there was grief in his eyes."
+
+    cu "You have ended it. You have ended everything."
+
+    e "I have ended the curse, Corvus. Not the family. The family is what I make of it. And I choose to make it a home."
+
+    jump ep4_ending
+
+label ep4_destroy:
+    "I reached for the pieces, and instead of taking them, I drove them together—the shard, the locket, the amulet, the jade—and I spoke the words the jaguar had taught me."
+
+    "The words that unmake a hunger."
+
+    with flash
+
+    "The pieces blazed white-hot, then shattered into dust. The older hunger, scattered and broken, could never reunite again."
+
+    "Corvus stared at the dust, his face unreadable. Then he turned, and walked into the dark."
+
+    cu "You have ended it. I hope the quiet house is worth it."
+
+    e "It is. Because it is mine. And it is a home."
+
+    jump ep4_ending
+
+label ep4_ending:
+    scene bg hallway
+    with slow_fade
+
+    "The mansion was quiet in the dawn. The pieces were dust, the hunger ended, and the shadow that had followed the Thorne name for a thousand years was, at last, gone."
+
+    show eleanor_neutral at left
+    show neith_neutral at right
+    with dissolve
+
+    e "He's gone, Neith. And the hunger with him. It's finally over."
+
+    n "It is. The Thorne name is just a name now. No power. No curse. No hunger. Just a home."
+
+    "She looked at me, and in the light, her eyes were soft."
+
+    n "You did it, Eleanor. You ended the bloodline's curse, in the end, not by power but by refusal."
+
+    e "I had help. I had you."
+
+    "She took my hand, and we stood together in the quiet house that had once been a house of horrors, and was now a home."
+
+    scene black
+    with slow_fade
+
+    centered "{size=+8}{color=#c8a2c8}The Thorne curse is ended. The Mansion Mysteries will continue...{/color}{/size}"
+
+    pause 2.0
+
+    centered "{size=+6}{color=#d4a373}END OF EPISODE FOUR{/color}{/size}"
 
     pause 2.0
 
