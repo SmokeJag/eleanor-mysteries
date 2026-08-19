@@ -15,6 +15,7 @@ define g = Character("Giles", color="#888888")          # the Ashworth butler
 define l = Character("Lord Marlow", color="#8fb3a8")    # the cursed family patriarch
 define m2 = Character("Lady Marlow", color="#d4a373")   # his wife
 define r = Character("Rowan", color="#e8d8e8")           # their daughter
+define pa = Character("Professor Ashe", color="#8fb3a8")   # Egyptologist
 
 # -------------------------------------------------------------------------------------------
 # IMAGE ALIASES — Backgrounds (reused from the trilogy)
@@ -55,6 +56,9 @@ label start:
 
         "Episode Two — The Cursed Family":
             jump episode_two
+
+        "Episode Three — The Duat's Echo":
+            jump episode_three
 
     return
 
@@ -975,6 +979,235 @@ label episode_two_epilogue:
     pause 2.0
 
     centered "{size=+6}{color=#d4a373}END OF EPISODE TWO{/color}{/size}"
+
+    pause 2.0
+
+    return
+
+# -------------------------------------------------------------------------------------------
+# EPISODE THREE — THE DUAT'S ECHO
+# -------------------------------------------------------------------------------------------
+label episode_three:
+    # Game State
+    $ clue_amulet = False
+    $ neith_trial = False
+
+    scene bg hallway
+    with slow_fade
+
+    "The letter came from a Professor Ashe, an Egyptologist at the British Museum. It was polite, precise, and faintly worried."
+
+    "'Ladies, I have come into possession of an object that I believe belongs, by right, to the Thorne family. It is a scarab amulet of unusual antiquity. I would be grateful for your counsel.'"
+
+    show eleanor_neutral at left
+    show neith_neutral at right
+    with dissolve
+
+    e "A scarab amulet. Another piece?"
+
+    n "I know what it is, Eleanor. I have not seen it in a hundred years, but I know it."
+
+    e "You've seen it before?"
+
+    n "I stood guard over it, in the Duat. It was the seal on the tomb of a Thorne who tried to escape the bargain—who hid a piece of the hunger where he hoped it would never be found."
+
+    n "If it is here, in England, then someone has brought it out. And that means the collector is closer than we thought."
+
+    scene bg library
+    with slow_fade
+
+    "Professor Ashe was a thin, earnest man, his rooms cluttered with shards, papyrus, and the smell of old sand. He set the amulet before us with a reverence that bordered on fear."
+
+    show eleanor_neutral at left
+    show neith_neutral at right
+    with dissolve
+
+    pa "It arrived by anonymous post, three days ago, with a note that it 'belonged with the Thorne name.' I did not know what to do. The object—it seems to *watch* me."
+
+    n "It does. It is keyed to the blood, like the others."
+
+    pa "You have seen such things before?"
+
+    n "I have stood in the place where this was made. It is a piece of a greater whole—a hunger that was broken and scattered, to keep it from reuniting."
+
+    "I reached for the amulet, and Neith caught my hand."
+
+    n "Wait. This one is different, Eleanor. It is not merely keyed to Thorne blood. It is keyed to *me*."
+
+    e "To you?"
+
+    n "I guarded it for a century. It knows my touch. And it will show whoever holds it the thing I fear most."
+
+    e "What do you fear, Neith?"
+
+    "She was quiet for a long moment. Then she took the amulet from Ashe, and her voice was steady."
+
+    n "That I did not choose mercy at all. That I chose it because I was afraid of the alternative—and that I am not the good Thorne I believed."
+
+    menu:
+        "Let Neith read the amulet — face her fear":
+            jump neith_reads_amulet
+
+        "Refuse — protect Neith from the trial":
+            jump neith_refused
+
+    return
+
+label neith_reads_amulet:
+    "Neith closed her hand around the amulet, and the room went cold."
+
+    with flash
+
+    "For a moment, she stood motionless. And then I saw it—a darkness pass across her face, a shadow of the woman she might have been. The woman who fed the hunger instead of starving it."
+
+    "She gasped, and the amulet fell from her hand, clattering to the floor."
+
+    $ neith_trial = True
+
+    e "Neith!"
+
+    n "I saw it, Eleanor. The thing I could have become. The hunger I could have fed, if I had been weaker."
+
+    "She looked at me, and her eyes were bright."
+
+    n "I did not choose mercy because I was afraid, Eleanor. I chose it because it was *right*. And this amulet cannot take that from me."
+
+    e "Then you've passed its trial."
+
+    n "No. I have passed *my* trial. The amulet only showed me what I already knew."
+
+    scene black
+    with slow_fade
+
+    centered "{size=+6}{color=#d4a373}THE COLLECTOR{/color}{/size}"
+
+    pause 1.5
+
+    jump collector_episode
+
+label neith_refused:
+    "I took the amulet from Neith's hand and set it back on the desk."
+
+    e "No. I will not let it do to you what the mirror did to me. We are not prisoners of these things, Neith."
+
+    n "You are right. It has waited a century for me to touch it. It can wait a little longer."
+
+    "But I saw it—the flicker in her eyes, the pull of the thing she feared. She was not unaffected."
+
+    scene black
+    with slow_fade
+
+    centered "{size=+6}{color=#d4a373}THE COLLECTOR{/color}{/size}"
+
+    pause 1.5
+
+    jump collector_episode
+
+label collector_episode:
+    scene bg library
+    with slow_fade
+
+    "The collector did not wait long."
+
+    "He was waiting for us at the mansion when we returned, a tall pale figure in the lamplight, the amulet in his hand."
+
+    show eleanor_neutral at left
+    show neith_neutral at right
+    with dissolve
+
+    "Neith went still. She had not looked at him since we left the Duat."
+
+    cu "You should not have let it slip through your fingers, priestess. It is the third piece. And it has been waiting for you."
+
+    n "You are Corvus. The raven. The last Thorne who believes the power is a birthright."
+
+    cu "You know my name."
+
+    n "I know your line. The ones who broke away, who kept the legends, who never learned what the Thorne power cost."
+
+    cu "What it *cost*? It was stolen from us. You are the one who hid it—you and your chosen heir, this woman who refuses her own name."
+
+    "He looked at me, and for the first time, there was something almost like pleading in his eyes."
+
+    cu "Eleanor. You are the blood. The amulet, the locket, the mirror—they are yours. Not mine, not your ancestors'. *Yours*. Join me, and we will finish what the first Thorne began. We will restore the name. We will be *family*."
+
+    menu:
+        "Refuse Corvus — end it here":
+            jump refuse_corvus
+
+        "Ask him about the older hunger":
+            jump question_corvus
+
+    return
+
+label refuse_corvus:
+    "I stood my ground, and I did not flinch."
+
+    e "You think it's a birthright, Corvus. It's a curse. My ancestors fed souls to a hunger for a name. I will not help you raise it again."
+
+    "His expression fell. Not into anger—into sorrow."
+
+    cu "You are the last Thorne who could have completed it. And you refuse to be family."
+
+    "He turned, and the darkness swallowed him, the amulet still in his hand."
+
+    "Neith stood beside me, her hand in mine."
+
+    n "He will not stop. But we will not fall."
+
+    jump episode_three_epilogue
+
+label question_corvus:
+    "I held his gaze. I did not refuse—I asked."
+
+    e "Who was the first Thorne to you? Not the legend. The man."
+
+    "Corvus was silent for a long moment. When he spoke, his voice was heavy."
+
+    cu "He was my father's father's father. A man who found a hunger in the dark, and fed it to buy his family power. He thought it was a bargain. It was a *trap*."
+
+    e "Then why do you want to finish it?"
+
+    cu "Because the power was meant to be ours. It was not the first Thorne who was wrong—it was the ones who broke away and hid it. I am not restoring a curse. I am restoring what was stolen."
+
+    "I looked at him, and I understood. He did not see the suffering. He only saw the legacy."
+
+    e "You're wrong, Corvus. But I will not let you pay for it with more souls."
+
+    "He looked at me, sad, and then turned into the dark."
+
+    jump episode_three_epilogue
+
+label episode_three_epilogue:
+    scene bg hallway
+    with slow_fade
+
+    "The mansion was quiet. Neith sat by the fire, the amulet locked away in a lead box, safe but not forgotten."
+
+    show eleanor_neutral at left
+    show neith_neutral at right
+    with dissolve
+
+    e "He called it a legacy. He thinks we're family—that we should finish it."
+
+    n "He is family, in a way. He is what we would have been, if we had not learned to choose differently."
+
+    e "And that's what makes him dangerous."
+
+    n "Yes. Because he is not a monster. He is just someone who wants to belong."
+
+    "I looked at her, and I took her hand."
+
+    e "Then we will keep showing him what belonging really means."
+
+    scene black
+    with slow_fade
+
+    centered "{size=+8}{color=#c8a2c8}The Mansion Mysteries will return...{/color}{/size}"
+
+    pause 2.0
+
+    centered "{size=+6}{color=#d4a373}END OF EPISODE THREE{/color}{/size}"
 
     pause 2.0
 
