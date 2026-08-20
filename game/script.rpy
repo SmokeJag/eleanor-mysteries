@@ -1697,12 +1697,38 @@ label episode_five:
 
     inn "Enough of that. You will want beds, and you will want them before the road turns cold. I will have the girl make up the rooms."
 
-    "She led us away from the fire, and I did not miss the way the old man watched us go—as if he had said more than he meant to, and was not sure he was glad of it."
+    "She led us up the narrow stairs, and at the top she paused, a little apologetic."
+
+    inn "I am sorry, ladies. It is a busy night, and I have only the one room left. It is a good room, mind—a double bed, and a fire. But it is only the one."
+
+    "I felt Neith glance at me, and I did not look back. There was a beat of silence, the kind that says more than words, and then I spoke, keeping my voice even."
+
+    e "That will be fine. Thank you."
+
+    "The innkeeper looked between us, and something in her face softened—not with surprise, but with a quiet, knowing warmth, the way people look when they recognise a thing they have seen before."
+
+    inn "Aye. I thought it might be."
+
+    "She left us at the door, and we stood in the narrow corridor, the firelight spilling from the room, and neither of us moved for a moment."
+
+    n "She knows."
+
+    e "She has been running this inn a long time. She has seen everything."
+
+    n "And she was not surprised."
+
+    "I looked at her then, in the low light, and I did not need to say anything. Three years, and the sight of her still steadied me. The room was small, and the bed was one, and it was not a thing we had to explain to anyone."
+
+    e "Come on. The road is long tomorrow."
+
+    "She smiled, and followed me in, and the door closed on the quiet of the inn."
 
     scene black
     with slow_fade
 
-    "That night, in a narrow bed in a strange inn, I lay awake and thought of two villages and two bargains. And I wondered, in the dark, whether the road to Grimshade was the only road we were walking."
+    "That night, in a strange inn, I lay awake and thought of two villages and two bargains. And I wondered, in the dark, whether the road to Grimshade was the only road we were walking."
+
+    "Beside me, Neith slept, and the warmth of her was a steady thing in the cold of the night. Whatever the road held, I would not walk it alone."
 
     scene bg village
     with slow_fade
