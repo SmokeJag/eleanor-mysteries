@@ -1314,7 +1314,7 @@ label episode_four:
 
     "The letter this time was not a letter. It was a small parcel, left on our doorstep in the night, wrapped in oilcloth and bound with black cord."
 
-    "I found it at dawn, when I went out to check the roses. It was cold to the touch, and it had been left with a care that made my skin prickle—not thrown, not hidden, but placed, as if the one who left it wanted to be sure I would find it."
+    "I found it at dawn, when I went out to the garden to clear my head before the day began. It was cold to the touch, and it had been left with a care that made my skin prickle—not thrown, not hidden, but placed, as if the one who left it wanted to be sure I would find it."
 
     "Inside, on a bed of black velvet, lay the jade jaguar."
 
