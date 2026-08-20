@@ -86,7 +86,7 @@ label start:
         "Episode Four — Shadow of the Jaguar":
             jump episode_four
 
-        "Episode Five — The Harvest":
+        "Episode Five — Children of the Harvest":
             jump episode_five
 
     return
@@ -1585,7 +1585,7 @@ label ep4_ending:
     return
 
 # -------------------------------------------------------------------------------------------
-# EPISODE FIVE — THE HARVEST
+# EPISODE FIVE — CHILDREN OF THE HARVEST
 # -------------------------------------------------------------------------------------------
 label episode_five:
     # Game State
@@ -1622,7 +1622,7 @@ label episode_five:
     scene black
     with slow_fade
 
-    centered "{size=+6}{color=#d4a373}EPISODE FIVE — THE HARVEST{/color}{/size}"
+    centered "{size=+6}{color=#d4a373}EPISODE FIVE — CHILDREN OF THE HARVEST{/color}{/size}"
 
     pause 1.5
 
