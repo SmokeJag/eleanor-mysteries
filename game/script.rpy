@@ -20,6 +20,9 @@ define j = Character("The Jaguar", color="#8fb3a8")        # the freed spirit
 define m = Character("Maren Holt", color="#d4a373")        # Ep5: the village woman who wrote
 define v = Character("The Vicar", color="#8fb3a8")         # Ep5: keeps the peace of the village
 define ch = Character("The Child", color="#e8d8e8")        # Ep5: the harvest child
+define mil = Character("The Miller", color="#8a6a4a")      # Ep5: a villager who knows the history
+define sch = Character("The Schoolteacher", color="#6a8a8a") # Ep5: a villager who knows the history
+define old = Character("Old Nan", color="#a8a8a8")         # Ep5: the oldest voice in the village
 
 # -------------------------------------------------------------------------------------------
 # IMAGE ALIASES — Backgrounds (reused from the trilogy)
@@ -42,6 +45,11 @@ image maren = Solid("#8a6a4a")
 image vicar = Solid("#4a6a4a")
 image bg village = Solid("#3a3a3a")
 image bg village id = Solid("#2a2a2a")
+image bg chapel = Solid("#1a1a2a")
+image bg inn = Solid("#4a3a2a")
+image miller = Solid("#7a5a3a")
+image schoolteacher = Solid("#5a7a7a")
+image oldnan = Solid("#9a9a9a")
 
 # -------------------------------------------------------------------------------------------
 # CUSTOM TRANSITIONS
@@ -1659,6 +1667,186 @@ label episode_five:
 
     e "And yet here we are."
 
+    "Maren looked at us for a long moment, and I saw the war in her—the fear of the thing, and the fear of what the village would do to her for speaking. She had already chosen, by writing that letter. But the choosing had cost her."
+
+    n "Maren. We will not let them take her. But we need to understand what we are facing. What is under the well?"
+
+    "She shook her head slowly, the way you shake your head at a thing you have spent a lifetime refusing to name."
+
+    m "I do not know. No one knows. It has been there longer than the village. But there are those who remember the old stories—the miller, the schoolteacher, old Nan. They will not speak to the village. But they might speak to you."
+
+    e "Why would they?"
+
+    m "Because you are not from here. You have not agreed to look away. That is the only thing that has ever made anyone in Grimshade speak."
+
+    scene black
+    with slow_fade
+
+    centered "{size=+6}{color=#d4a373}THE VILLAGE{/color}{/size}"
+
+    pause 1.5
+
+    scene bg village
+    with slow_fade
+
+    "We walked the streets of Grimshade, and the village walked away from us."
+
+    "It was not a cruelty, not exactly. It was a reflex, worn smooth by generations. A woman gathering washing from a line saw us and turned her back, slowly, as if we were not there. A man mending a fence stopped, looked at the ground, and went inside. The doors did not slam. They simply closed."
+
+    "That was the thing I would come to understand about Grimshade. It did not hate. It did not even fear, not in the way you could name. It had simply learned, a long time ago, that the safest thing to do with a stranger was to become, all at once, a village of empty windows."
+
+    show eleanor_neutral at left
+    show neith_neutral at right
+    with dissolve
+
+    n "They are not hiding from us, Eleanor. They are hiding from the thing they have agreed to feed."
+
+    e "And from the part of themselves that knows it is wrong."
+
+    n "Yes. That is the part that is hardest to live with. So they have buried it, and they call the burial peace."
+
+    "I looked at her, and I felt the weight of what she was saying. She had spent a century in the Duat, watching souls weigh their own hearts. She knew what it cost a person to look away from the thing they had done."
+
+    e "How do you live with it, Neith? The knowing?"
+
+    "She was quiet for a moment. The rain hung in the air, and the village held its breath around us."
+
+    n "I do not live with it by looking away. I live with it by looking, and choosing, every day, not to be the thing I saw."
+
+    "She met my eyes, and in the grey light, hers were steady."
+
+    n "That is the only way, Eleanor. You cannot unsee a thing. You can only decide, each time, what you will do with what you have seen."
+
+    "I reached out and took her hand. It was warm, and it steadied me in a way I could not have named."
+
+    e "Then let us look. And let us decide."
+
+    "We turned toward the mill, and the first of the old voices."
+
+    scene bg inn
+    with slow_fade
+
+    "The miller was a broad, grey man who had outlived his mill and most of his patience. He did not invite us in. He stood in the doorway, blocking the light, and he looked at us the way you look at a debt you had hoped was forgotten."
+
+    show eleanor_neutral at left
+    show neith_neutral at right
+    show miller at center
+    with dissolve
+
+    mil "You are the ones. The ones who came to open the well."
+
+    e "We came to find a child."
+
+    "He was silent for a long moment. Then he stepped aside, and let us in."
+
+    mil "The child is not the first. And she will not be the last, unless you are very lucky, or very foolish. Sit. I will tell you what the village does not say."
+
+    "He poured three cups of something dark and bitter, and he did not drink his."
+
+    mil "The thing in the well is not a thing. It is a *debt*. A bargain, made before the village was a village, by a man who wanted the land to be fertile and the rain to come."
+
+    e "A bargain with what?"
+
+    mil "With the thing that was already here. It was here before the first stone was laid. It is not a god, and it is not a devil. It is older than both, and it is hungry, and it has learned, over the centuries, to be patient."
+
+    n "And the price?"
+
+    "The miller looked at the floor."
+
+    mil "The price was always the same. What the land could not give, the village gave instead. Every nine years, one of the young. It was the only way the land stayed green."
+
+    e "And you have kept this. For two hundred years."
+
+    mil "We have kept it because we were afraid not to. And because it was easier, each time, to tell ourselves it was the only way. That is the lie at the heart of it, ladies. It was never the only way. It was just the easiest."
+
+    "I felt the cold settle in me. Not at the thing in the well. At the ordinary, human arithmetic of it—the way a whole village had learned to count a child as the price of a harvest."
+
+    e "Where is the child now?"
+
+    mil "They will not tell you. But the night before the first frost, they take them to the chapel, at the edge of the village. It is the only door that locks from the outside."
+
+    $ clue_vicar = True
+
+    scene black
+    with slow_fade
+
+    centered "{size=+6}{color=#d4a373}THE OLD VOICES{/color}{/size}"
+
+    pause 1.5
+
+    scene bg village
+    with slow_fade
+
+    "The schoolteacher was a thin, precise woman who kept the village's records and its conscience, in that order. She met us in the churchyard, among the graves, and she did not pretend we were welcome."
+
+    show eleanor_neutral at left
+    show neith_neutral at right
+    show schoolteacher at center
+    with dissolve
+
+    sch "You have been to the miller. He told you the bargain."
+
+    e "He told us the price. He did not tell us what the thing is."
+
+    "She looked at the graves, and her voice was quiet."
+
+    sch "The records go back two hundred years, ladies. Every nine years, a name. Always a young one. Always the same season. I have kept the records, and I have never once written a cause of death, because there is no cause that the village will admit."
+
+    n "And the thing itself?"
+
+    sch "The oldest record calls it the *first hunger*. It was here before the village, before the church, before the land was cleared. The first settlers did not find a valley. They found a thing that was already waiting, and they made a bargain with it because they were afraid."
+
+    e "And the bargain has never been broken?"
+
+    "She was silent for a long moment. Then she looked at me, and there was something in her eyes I had not expected—a thin, tired hope."
+
+    sch "It has never been broken because no one has ever been brave enough to try. The village has always chosen the harvest over the risk. But the records are not the whole story, ladies. There is one who remembers the beginning. If she will speak to you."
+
+    e "Old Nan."
+
+    sch "She is the oldest thing in Grimshade, older than the church, older than the well's lid. She does not speak to the village. But she has been watching the road, waiting, I think, for someone who was not from here."
+
+    scene black
+    with slow_fade
+
+    centered "{size=+6}{color=#d4a373}OLD NAN{/color}{/size}"
+
+    pause 1.5
+
+    scene bg village id
+    with slow_fade
+
+    "Old Nan's cottage was the oldest in the village, a crooked, smoke-blackened thing that seemed to have grown out of the ground rather than been built on it. She was waiting for us at the door, and she did not look surprised to see us."
+
+    show eleanor_neutral at left
+    show neith_neutral at right
+    show oldnan at center
+    with dissolve
+
+    old "You have come about the well. I have been waiting for you for sixty years."
+
+    e "You knew we would come?"
+
+    old "I knew someone would, one day. The village has been waiting too, though it does not know it. It has been waiting for someone to say the thing it has been afraid to say."
+
+    n "What is the thing, Nan?"
+
+    "She looked at us, and her eyes were old and clear, and terrible."
+
+    old "The thing in the well is not a thing at all. It is a *name*. A name that was spoken once, in fear, and that has been fed ever since. It has no body of its own. It is made of the fear the village gives it, and the silence, and the children."
+
+    e "Then how do you end it?"
+
+    "Old Nan smiled, and it was not a kind smile."
+
+    old "You do not feed it. That is the only way. You stop giving it the thing it needs, and it starves. But the village will not stop, because the village is afraid. And fear is the thing that keeps it alive."
+
+    "She reached out and took my hand, and her grip was surprisingly strong."
+
+    old "You are the first in two hundred years who is not afraid of it, child. Do not let the village make you afraid. That is the only way you will save the girl."
+
+    $ clue_well = True
+
     scene black
     with slow_fade
 
@@ -1871,7 +2059,11 @@ label harvest5:
     scene bg hallway
     with slow_fade
 
-    "We left Grimshade at dawn. The rain had stopped, and the road was clear, and we did not look back, and I do not think the village will ever be quite the same."
+    "We left Grimshade at dawn. The rain had stopped, and the road was clear, and we did not look back."
+
+    "I do not think the village will ever be quite the same. But I do not know if that is a comfort, or a wound. Some things, once seen, cannot be unseen—and the village has seen itself now, in the light of what it was willing to do."
+
+    "We drove in silence for a long time. The hills greyed and fell away behind us, and the world opened out into the ordinary morning of the rest of the country, where children went to school and wells were only wells."
 
     show eleanor_neutral at left
     show neith_neutral at right
@@ -1881,11 +2073,39 @@ label harvest5:
 
     e "I am. Maren's niece. She will carry it. That is the part they do not tell you about the village, that even when you save them, the saving has a price."
 
-    n "You did not look away, Eleanor. That is the thing."
+    n "What price?"
 
-    "I looked at her, and I felt the weight of it."
+    "I looked out at the passing fields, and I felt the weight of the morning."
 
-    e "I know. But I did."
+    e "The child will grow up knowing the village was willing to give her to the well. That is not a thing you forget. And the village will grow up knowing it was willing to do it. That is not a thing *they* forget, either."
+
+    "Neith was quiet for a long moment. The carriage rocked, and the road unwound."
+
+    n "You cannot save them from the knowing, Eleanor. You can only save them from the doing. And you did that."
+
+    e "Did I? Or did I just make them afraid of a different thing?"
+
+    "She turned to look at me, and in the grey light, her eyes were steady and kind."
+
+    n "You made them afraid of the truth of what they were. That is a fear worth having. It is the only fear that has ever made anyone change."
+
+    "I looked at her, and I felt the weight of it lift, just a little. Not because the morning was easy. But because I was not carrying it alone."
+
+    e "How do you do it, Neith? Carry the knowing, and not let it break you?"
+
+    "She was quiet. Then she reached across and took my hand."
+
+    n "I do not carry it alone. That is the whole secret, Eleanor. I have you. And you have me. And between us, we can carry almost anything."
+
+    "I held her hand, and I felt the truth of it settle in me. The village would carry its shame, and the child would carry her fear, and the world would go on being the world. But we would carry it together."
+
+    e "Then let us carry it together. All of it."
+
+    "She smiled—a small, tired, real smile."
+
+    n "We already do."
+
+    "We drove on into the morning, the two of us, and the road ahead was long, and the world was heavy, and it did not matter, because we were not alone in it."
 
     scene black
     with slow_fade
