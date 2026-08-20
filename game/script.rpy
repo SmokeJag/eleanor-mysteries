@@ -43,6 +43,10 @@ define slow_dissolve = Dissolve(1.5)
 define slow_fade = Fade(1.0, 0.5, 1.0)
 define flash = Fade(0.1, 0.0, 0.5, color="#ffffff")
 
+# The quick-menu has an inventory button; define the list so the screen
+# doesn't crash even though the Mysteries don't use an inventory system.
+default inventory = []
+
 # -------------------------------------------------------------------------------------------
 # MAIN MENU — episode select
 # -------------------------------------------------------------------------------------------
