@@ -23,6 +23,8 @@ define ch = Character("The Child", color="#e8d8e8")        # Ep5: the harvest ch
 define mil = Character("The Miller", color="#8a6a4a")      # Ep5: a villager who knows the history
 define sch = Character("The Schoolteacher", color="#6a8a8a") # Ep5: a villager who knows the history
 define old = Character("Old Nan", color="#a8a8a8")         # Ep5: the oldest voice in the village
+define inn = Character("The Innkeeper", color="#c8a2c8")    # Ep5: the inn on the road to Grimshade
+define om = Character("The Old Man", color="#a8a8a8")        # Ep5: a patron at the Hanged Man
 
 # -------------------------------------------------------------------------------------------
 # IMAGE ALIASES — Backgrounds (reused from the trilogy)
@@ -50,6 +52,7 @@ image bg inn = Solid("#4a3a2a")
 image miller = Solid("#7a5a3a")
 image schoolteacher = Solid("#5a7a7a")
 image oldnan = Solid("#9a9a9a")
+image innkeeper = Solid("#c8a2c8")
 
 # -------------------------------------------------------------------------------------------
 # CUSTOM TRANSITIONS
@@ -1619,12 +1622,87 @@ label episode_five:
 
     e "The kind the village does not call by its name."
 
+    "The letter was postmarked from a village in Somerset called Grimshade. I had never heard of it, and that, more than anything, unsettled me. Somerset was full of old names and older stories, and a village that had kept itself out of the maps for two hundred years was a village that had something to hide."
+
+    n "It is more than a day's journey, Eleanor. We will not reach it before nightfall."
+
+    e "Then we will find a bed on the road, and reach it in the morning."
+
     scene black
     with slow_fade
 
     centered "{size=+6}{color=#d4a373}EPISODE FIVE — CHILDREN OF THE HARVEST{/color}{/size}"
 
     pause 1.5
+
+    scene bg inn
+    with slow_fade
+
+    "The inn was called the Hanged Man, which told you most of what you needed to know about the road it stood on. It was a low, timbered building at a crossroads, its sign creaking in the wind, its windows glowing amber against the gathering dark."
+
+    "We had been on the road since mid-morning, and the miles had worn the day down to a grey thread. The inn was the first light we had seen in hours."
+
+    show eleanor_neutral at left
+    show neith_neutral at right
+    with dissolve
+
+    n "A cheerful name."
+
+    e "The best inns always have the worst names. It keeps the timid away."
+
+    "Inside, the Hanged Man was warm and close, full of the smell of woodsmoke and ale and the low murmur of voices. A fire burned in a great hearth, and around it, a handful of locals sat with their pipes and their pints, the way men do when the night is long and the stories are old."
+
+    show innkeeper at center
+    with dissolve
+
+    "The innkeeper was a broad, ruddy woman with arms like a blacksmith's and the watchful eyes of someone who had heard every tale the road could bring. She set two tankards before us without being asked."
+
+    inn "You are a long way from anywhere, ladies. What brings you to the Hanged Man?"
+
+    e "We are bound for Grimshade, in the morning."
+
+    "The room went quiet. Not suddenly—the way a room goes quiet when everyone in it decides, at the same moment, not to speak."
+
+    inn "Grimshade. Aye. That is a name we do not say lightly on this road."
+
+    n "Why not?"
+
+    "The innkeeper looked at us for a long moment. Then she leaned in, and her voice dropped."
+
+    inn "Because the road to Grimshade is a road that does not like to be travelled, ladies. And the village at the end of it is a village that does not like to be found. There are stories."
+
+    e "What stories?"
+
+    "She glanced at the fire, and the men around it had gone very still, their eyes on their pints."
+
+    inn "They say the village made a bargain, long ago, with something that lives under the hill. And that every so often, it comes due. They say the wells run dry and the fields go grey, and then—"
+
+    "She stopped, and shook her head."
+
+    inn "No. I will not tell it. Some stories are not for telling to strangers who mean to walk into them."
+
+    "A man by the fire—old, with a face like a walnut—spoke up, his voice cracked with age."
+
+    om "But there is another story, if you want one. A different one. About a house on the far side of the county, and a thing that was buried and should have stayed buried."
+
+    "I felt Neith go still beside me."
+
+    e "What house?"
+
+    "The old man smiled, showing a gap in his teeth."
+
+    om "They call it the Hollow House. It stands empty now, on the edge of the moors, and they say a family lived there once who made a bargain of their own. They say the bargain is still there, waiting, and that it has been waiting a very long time."
+
+    "The fire popped. The innkeeper straightened, and the moment broke."
+
+    inn "Enough of that. You will want beds, and you will want them before the road turns cold. I will have the girl make up the rooms."
+
+    "She led us away from the fire, and I did not miss the way the old man watched us go—as if he had said more than he meant to, and was not sure he was glad of it."
+
+    scene black
+    with slow_fade
+
+    "That night, in a narrow bed in a strange inn, I lay awake and thought of two villages and two bargains. And I wondered, in the dark, whether the road to Grimshade was the only road we were walking."
 
     scene bg village
     with slow_fade
