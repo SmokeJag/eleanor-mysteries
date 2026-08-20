@@ -1849,7 +1849,7 @@ label run_with_the_child:
     jump harvest5
 
 label the_well_thing:
-    "It came up out of the ground the way rot comes up out of a wound. It did not have a fixed, it had the shape of a hunger that had been a name for too long."
+    "It came up out of the ground the way rot comes up out of a wound. It did not have a fixed shape—it had the shape of a hunger that had been a name for too long."
 
     with flash
 
